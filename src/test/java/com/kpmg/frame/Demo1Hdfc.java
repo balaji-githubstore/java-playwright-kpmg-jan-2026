@@ -6,7 +6,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.FrameLocator;
-
+//frame using xpath
 public class Demo1Hdfc {
 
 	public static void main(String[] args) {
