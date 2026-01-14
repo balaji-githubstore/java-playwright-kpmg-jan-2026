@@ -1,0 +1,56 @@
+Xpath
+Absolute xpath - (not recommended) - /html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[1]/input
+
+
+Relative xpath - 
+//tagname[@attribute='']
+//tagname[text()='']
+
+
+Contains
+//tagname[contains(@attribute,'')]
+//tagname[contains(text(),'')]
+
+normalize-space() 
+//tagname[normalize-space()='']
+//a[normalize-space()='Create new account']
+
+
+Grouping of xpath - starts at 1
+(//input[@id='sex'])[3]
+
+And-or
+//button[text()='Accept All' and @id='onetrust-accept-btn-handler']
+
+following-preceding
+
+parent-child
+
+ancestor-descendant
+
+following-sibling 
+
+
+
+Example: verify in chrome --> ctrl+f 
+//input[@id='email']
+//input[@id='pass']
+//button[text()='Log in']
+//a[text()='Create new account']
+
+//a[normalize-space()='Create new account']
+
+
+
+//input[contains(@id,'UserFirst')]
+
+
+//b[contains(text(),'phpMyAdmin')]
+
+//div[@id='pma_errors']
+
+//div[contains(text(),'Access')]
+
+
+
+
