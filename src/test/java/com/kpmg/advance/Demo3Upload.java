@@ -9,8 +9,8 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.FileChooser;
 
-//Option 2 - waitForFileChooser() Method
-public class Demo2Upload {
+//Option 3 - handler Method page.onFileChooser()
+public class Demo3Upload {
 
 	public static void main(String[] args) {
 		
@@ -23,13 +23,11 @@ public class Demo2Upload {
 
 		page.navigate("https://www.ilovepdf.com/pdf_to_word");
 		
+		page.onFileChooser((fileChooser)->{
+			fileChooser.setFiles(Paths.get("C:\\AutomationSession\\demo.pdf"));
+		});	
+		page.locator("xpath=//span[text()='Select PDF file']").click();
 		
-		FileChooser fileChooser= page.waitForFileChooser(()->{
-			page.locator("xpath=//span[text()='Select PDF file']").click();
-		});
-		
-		//path from root directory won't work if you move the project or in pipeline
-		fileChooser.setFiles(Paths.get("C:\\AutomationSession\\demo.pdf"));
 		
 		page.waitForTimeout(5000);
 		playwright.close();
