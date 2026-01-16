@@ -19,6 +19,10 @@ normalize-space()
 Grouping of xpath - starts at 1
 (//input[@id='sex'])[3]
 
+
+Upload 
+//input[@type='file']
+
 And-or
 //button[text()='Accept All' and @id='onetrust-accept-btn-handler']
 
@@ -37,18 +41,10 @@ Example: verify in chrome --> ctrl+f
 //input[@id='pass']
 //button[text()='Log in']
 //a[text()='Create new account']
-
 //a[normalize-space()='Create new account']
-
-
-
 //input[contains(@id,'UserFirst')]
-
-
 //b[contains(text(),'phpMyAdmin')]
-
 //div[@id='pma_errors']
-
 //div[contains(text(),'Access')]
 
 
