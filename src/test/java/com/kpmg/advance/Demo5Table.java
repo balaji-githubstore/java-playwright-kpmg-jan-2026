@@ -1,16 +1,12 @@
 package com.kpmg.advance;
 
-import java.nio.file.Paths;
-
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
-import com.microsoft.playwright.FileChooser;
 
-//Option 3 - handler Method page.onFileChooser()
-public class Demo3Upload {
+public class Demo5Table {
 
 	public static void main(String[] args) {
 		
@@ -21,18 +17,26 @@ public class Demo3Upload {
 		// tab 1
 		Page page = context.newPage();
 
-		page.navigate("https://www.ilovepdf.com/pdf_to_word");
+		page.navigate("https://datatables.net/extensions/select/examples/checkbox/checkbox.html");
 		
-		//registering the file handler
-		page.onFileChooser((fileChooser)->{
-			fileChooser.setFiles(Paths.get("C:\\AutomationSession\\demo.pdf"));
-		});	
-		page.locator("xpath=//span[text()='Select PDF file']").click();
+
 		
+		for(int r=1;r<=10;r++)
+		{
+			String actualName= page.locator("xpath=//table[@id='example']/tbody/tr["+r+"]/td[2]").innerText();
+			System.out.println(actualName);
+			
+			if(actualName.equals("Brenden Wagner"))
+			{
+				//click on checkbox
+				page.locator("xpath=//table[@id='example']/tbody/tr["+r+"]/td[1]").click();
+				break;
+			}
+			
+		}
 		
 		page.waitForTimeout(5000);
 		playwright.close();
-
 	}
 
 }
