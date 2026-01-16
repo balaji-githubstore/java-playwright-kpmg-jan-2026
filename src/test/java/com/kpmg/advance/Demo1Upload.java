@@ -23,10 +23,11 @@ public class Demo1Upload {
 		
 		page.locator("xpath=//input[@type='file']").setInputFiles(Paths.get("C:\\AutomationSession\\demo.pdf"));
 
-		
 		page.waitForTimeout(5000);
 		playwright.close();
 
 	}
 
 }
+
+
