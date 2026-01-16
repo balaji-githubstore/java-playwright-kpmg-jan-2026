@@ -7,11 +7,13 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
-//option 1 - using locator and setInputFiles()
-public class Demo1Upload {
+import com.microsoft.playwright.FileChooser;
+
+//Option 2 - waitForFileChooser() Method
+public class Demo2Upload {
 
 	public static void main(String[] args) {
-
+		
 		Playwright playwright = Playwright.create();
 		Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false).setChannel("chrome"));
 
@@ -21,13 +23,16 @@ public class Demo1Upload {
 
 		page.navigate("https://www.ilovepdf.com/pdf_to_word");
 		
-		page.locator("xpath=//input[@type='file']").setInputFiles(Paths.get("C:\\AutomationSession\\demo.pdf"));
-
+		
+		FileChooser fileChooser= page.waitForFileChooser(()->{
+			page.locator("xpath=//span[text()='Select PDF file']").click();
+		});
+		
+		fileChooser.setFiles(Paths.get("C:\\AutomationSession\\demo.pdf"));
+		
 		page.waitForTimeout(5000);
 		playwright.close();
 
 	}
 
 }
-
-
