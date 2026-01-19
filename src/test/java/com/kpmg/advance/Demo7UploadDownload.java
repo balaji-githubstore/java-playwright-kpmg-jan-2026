@@ -1,12 +1,19 @@
 package com.kpmg.advance;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
+import com.microsoft.playwright.Download;
+import com.microsoft.playwright.FrameLocator.GetByTextOptions;
+import com.microsoft.playwright.FileChooser;
 
-public class Demo4ShadowRoot {
+//Option 3 - handler Method page.onFileChooser()
+public class Demo7UploadDownload {
 
 	public static void main(String[] args) {
 		
@@ -17,19 +24,20 @@ public class Demo4ShadowRoot {
 		// tab 1
 		Page page = context.newPage();
 
-		page.navigate("https://www.royalcaribbean.com/account/signin");
+		page.navigate("https://www.ilovepdf.com/pdf_to_word");
 		
-		page.locator("css=button[aria-label='Create an account']").click();
-//		page.locator("text=Create an account").click();
+		//registering the file handler
+		page.onFileChooser((fileChooser)->{
+			fileChooser.setFiles(Paths.get("C:\\AutomationSession\\demo.pdf"));
+		});	
+		page.locator("xpath=//span[text()='Select PDF file']").click();
 		
-//		page.getByText("Create an account").nth(1).click();
-		
-		page.locator("css=input[name='firstname']").fill("jack");
 		
 		
-		//fill the form
+		
 		page.waitForTimeout(5000);
 		playwright.close();
+
 	}
 
 }

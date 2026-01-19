@@ -31,7 +31,7 @@ public class Demo2Tabs {
 			page.locator("xpath=//div[text()='Banking with Citi']").click();
 		});
 		
-		//enter username as john123
+		//check for new tab
 		newPage.waitForLoadState(LoadState.LOAD,new WaitForLoadStateOptions().setTimeout(60000));
 		
 		newPage.waitForSelector("xpath=//input[@id='username']", new WaitForSelectorOptions().setTimeout(60000));
