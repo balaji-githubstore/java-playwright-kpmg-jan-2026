@@ -40,8 +40,6 @@ public class Demo1PostPet {
 		System.out.println(responsePetObj.getId());
 		
 		playwright.close();
-		
-		
 	}
 
 }
