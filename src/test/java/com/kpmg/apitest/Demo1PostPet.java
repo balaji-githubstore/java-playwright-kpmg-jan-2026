@@ -1,5 +1,7 @@
 package com.kpmg.apitest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kpmg.model.Pet;
 import com.microsoft.playwright.APIRequest.NewContextOptions;
 
 import java.io.IOException;
@@ -31,7 +33,14 @@ public class Demo1PostPet {
 		System.out.println(response.text());
 		System.out.println(response.body());
 		
+		
+		ObjectMapper mapper=new ObjectMapper();
+		Pet responsePetObj=mapper.readValue(response.body(), Pet.class);
+		
+		System.out.println(responsePetObj.getId());
+		
 		playwright.close();
+		
 		
 	}
 
