@@ -9,6 +9,8 @@ public class Demo1PostPet {
 
 	public static void main(String[] args) {
 		
+		
+		
 		String baseUrl="https://petstore.swagger.io";
 		String resource="/v2/pet/10";
 		
