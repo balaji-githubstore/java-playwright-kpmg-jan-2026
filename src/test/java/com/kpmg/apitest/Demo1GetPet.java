@@ -22,6 +22,8 @@ public class Demo1GetPet {
 		System.out.println(response.text());
 		System.out.println(response.body());
 		
+		
+		playwright.close();
 	}
 
 }
