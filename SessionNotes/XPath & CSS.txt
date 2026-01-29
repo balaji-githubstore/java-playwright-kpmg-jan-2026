@@ -7,13 +7,16 @@ Relative xpath -
 //tagname[text()='']
 
 
-Contains
+Contains - text may not work if there are whitespace sometimes 
 //tagname[contains(@attribute,'')]
 //tagname[contains(text(),'')]
 
 normalize-space() 
 //tagname[normalize-space()='']
 //a[normalize-space()='Create new account']
+//a[normalize-space()='Download WORD']
+
+//a[contains(normalize-space(),'Download WO')]
 
 
 Grouping of xpath - starts at 1
@@ -29,6 +32,9 @@ And-or
 following-preceding
 
 parent-child
+
+child 
+//table[@id='example']/tbody
 
 ancestor-descendant
 
@@ -46,6 +52,118 @@ Example: verify in chrome --> ctrl+f
 //b[contains(text(),'phpMyAdmin')]
 //div[@id='pma_errors']
 //div[contains(text(),'Access')]
+
+
+
+//button[@aria-label='Create an account']
+//button[text()='Create an account']
+
+
+Number of rows 
+//table[@id='example']/tbody/tr
+Number of columns 
+//table[@id='example']/tbody/tr[1]/td
+
+//table[@id='example']/tbody/tr[1]/td[2]
+
+
+--------------------------------------------------------
+CSS selector 
+
+#id
+.className
+tagname[attribute='']
+[attribute='']
+
+Example:
+#email
+
+button[aria-label='Create an account']
+
+input[name='firstname']
+
+
+
+
+
+------------------------------------
+saul, saul123, Invalid credentials
+john, john123, Invalid credentials
+
+
+--------------------
+
+
+
+john, john123
+peter,peter123
+kim,kim123
+jack,jack123
+
+
+{{john, john123},{peter,peter123},{kim,kim123}}
+
+
+
+
+
+-----
+Excel index	Object[][] index
+1 0		0 0
+1 1		0 1
+1 2		0 2
+
+2 0		1 0
+2 1		1 1
+2 2		1 2
+
+
+-----
+
+git branch b1-no-page-object 
+--created a new branch at Jan 21, 10:43 AM IST. It is copy of existing checkout - master branch. 
+
+
+
+
+
+
+-------------------------------------------
+
+
+
+class - LoginPage
+	methods
+	  enterUsername(String username)
+	  enterPassword(String password) 
+	  clickOnLogin()
+	  getInvalidErrorMessage()
+	  getLoginPageTitle()
+	  getHeader()
+	  clickOnForgotPassword()	
+		
+class MainPage - keep all common elements. Menu, profile selection 
+
+class - ResetPage
+	enterUsername(String username)
+	clickOnCancel()
+	clickOnResetPassword()
+
+
+//will resume at 11:50 AM IST
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
