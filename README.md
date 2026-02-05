@@ -23,7 +23,7 @@ Playwright For API such as:
 ---
 
 ### 🔹 API Automation using restassured.io  
-**Repository:** [playwright-ui-api-java-automation](https://github.com/balaji-githubstore/java-api-restassured-kpmg-jan-2026.git)  
+**Repository:** [java-api-restassured-automation](https://github.com/balaji-githubstore/java-api-restassured-kpmg-jan-2026.git)  
 - REST - GET, POST, PUT, DELETE
 - Validations - Status Code, Response Time, Response Body
 - Model Classes, Serialization, Deserialization
