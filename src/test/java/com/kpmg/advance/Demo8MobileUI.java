@@ -1,4 +1,4 @@
-package com.kpmg.apidemo;
+package com.kpmg.advance;
 
 import java.util.Map;
 
@@ -13,7 +13,7 @@ import com.microsoft.playwright.BrowserType.LaunchOptions;
  * 
  * https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json
  */
-public class Demo7MobileUI {
+public class Demo8MobileUI {
 	public static void main(String[] args) {
 
 		Playwright playwright = Playwright.create();
